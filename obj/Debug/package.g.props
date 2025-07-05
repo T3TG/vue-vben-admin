@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup>
+    <PackageJsonName Condition="$(PackageJsonName) == ''">vben-admin-monorepo</PackageJsonName>
+    <PackageJsonVersion Condition="$(PackageJsonVersion) == ''">5.5.7</PackageJsonVersion>
+    <PackageJsonPrivate Condition="$(PackageJsonPrivate) == ''">true</PackageJsonPrivate>
+    <PackageJsonKeywords Condition="$(PackageJsonKeywords) == ''">[
+  "monorepo",
+  "turbo",
+  "vben",
+  "vben admin",
+  "vben pro",
+  "vue",
+  "vue admin",
+  "vue vben admin",
+  "vue vben admin pro",
+  "vue3"
+]</PackageJsonKeywords>
+    <PackageJsonHomepage Condition="$(PackageJsonHomepage) == ''">https://github.com/vbenjs/vue-vben-admin</PackageJsonHomepage>
+    <PackageJsonBugs Condition="$(PackageJsonBugs) == ''">https://github.com/vbenjs/vue-vben-admin/issues</PackageJsonBugs>
+    <PackageJsonRepository Condition="$(PackageJsonRepository) == ''">vbenjs/vue-vben-admin.git</PackageJsonRepository>
+    <PackageJsonLicense Condition="$(PackageJsonLicense) == ''">MIT</PackageJsonLicense>
+    <PackageJsonAuthorName Condition="$(PackageJsonAuthorName) == ''">vben</PackageJsonAuthorName>
+    <PackageJsonAuthorEmail Condition="$(PackageJsonAuthorEmail) == ''">ann.vben@gmail.com</PackageJsonAuthorEmail>
+    <PackageJsonAuthorUrl Condition="$(PackageJsonAuthorUrl) == ''">https://github.com/anncwb</PackageJsonAuthorUrl>
+    <PackageJsonType Condition="$(PackageJsonType) == ''">module</PackageJsonType>
+    <PackageJsonScriptsBuild Condition="$(PackageJsonScriptsBuild) == ''">cross-env NODE_OPTIONS=--max-old-space-size=8192 turbo build</PackageJsonScriptsBuild>
+    <PackageJsonScriptsBuildAnalyze Condition="$(PackageJsonScriptsBuildAnalyze) == ''">turbo build:analyze</PackageJsonScriptsBuildAnalyze>
+    <PackageJsonScriptsBuildAntd Condition="$(PackageJsonScriptsBuildAntd) == ''">pnpm run build --filter=@vben/web-antd</PackageJsonScriptsBuildAntd>
+    <PackageJsonScriptsBuildDocker Condition="$(PackageJsonScriptsBuildDocker) == ''">./scripts/deploy/build-local-docker-image.sh</PackageJsonScriptsBuildDocker>
+    <PackageJsonScriptsBuildDocs Condition="$(PackageJsonScriptsBuildDocs) == ''">pnpm run build --filter=@vben/docs</PackageJsonScriptsBuildDocs>
+    <PackageJsonScriptsBuildEle Condition="$(PackageJsonScriptsBuildEle) == ''">pnpm run build --filter=@vben/web-ele</PackageJsonScriptsBuildEle>
+    <PackageJsonScriptsBuildNaive Condition="$(PackageJsonScriptsBuildNaive) == ''">pnpm run build --filter=@vben/web-naive</PackageJsonScriptsBuildNaive>
+    <PackageJsonScriptsBuildPlay Condition="$(PackageJsonScriptsBuildPlay) == ''">pnpm run build --filter=@vben/playground</PackageJsonScriptsBuildPlay>
+    <PackageJsonScriptsChangeset Condition="$(PackageJsonScriptsChangeset) == ''">pnpm exec changeset</PackageJsonScriptsChangeset>
+    <PackageJsonScriptsCheck Condition="$(PackageJsonScriptsCheck) == ''">pnpm run check:circular &amp;&amp; pnpm run check:dep &amp;&amp; pnpm run check:type &amp;&amp; pnpm check:cspell</PackageJsonScriptsCheck>
+    <PackageJsonScriptsCheckCircular Condition="$(PackageJsonScriptsCheckCircular) == ''">vsh check-circular</PackageJsonScriptsCheckCircular>
+    <PackageJsonScriptsCheckCspell Condition="$(PackageJsonScriptsCheckCspell) == ''">cspell lint **/*.ts **/README.md .changeset/*.md --no-progress</PackageJsonScriptsCheckCspell>
+    <PackageJsonScriptsCheckDep Condition="$(PackageJsonScriptsCheckDep) == ''">vsh check-dep</PackageJsonScriptsCheckDep>
+    <PackageJsonScriptsCheckType Condition="$(PackageJsonScriptsCheckType) == ''">turbo run typecheck</PackageJsonScriptsCheckType>
+    <PackageJsonScriptsClean Condition="$(PackageJsonScriptsClean) == ''">node ./scripts/clean.mjs</PackageJsonScriptsClean>
+    <PackageJsonScriptsCommit Condition="$(PackageJsonScriptsCommit) == ''">czg</PackageJsonScriptsCommit>
+    <PackageJsonScriptsDev Condition="$(PackageJsonScriptsDev) == ''">turbo-run dev</PackageJsonScriptsDev>
+    <PackageJsonScriptsDevAntd Condition="$(PackageJsonScriptsDevAntd) == ''">pnpm -F @vben/web-antd run dev</PackageJsonScriptsDevAntd>
+    <PackageJsonScriptsDevDocs Condition="$(PackageJsonScriptsDevDocs) == ''">pnpm -F @vben/docs run dev</PackageJsonScriptsDevDocs>
+    <PackageJsonScriptsDevEle Condition="$(PackageJsonScriptsDevEle) == ''">pnpm -F @vben/web-ele run dev</PackageJsonScriptsDevEle>
+    <PackageJsonScriptsDevNaive Condition="$(PackageJsonScriptsDevNaive) == ''">pnpm -F @vben/web-naive run dev</PackageJsonScriptsDevNaive>
+    <PackageJsonScriptsDevPlay Condition="$(PackageJsonScriptsDevPlay) == ''">pnpm -F @vben/playground run dev</PackageJsonScriptsDevPlay>
+    <PackageJsonScriptsFormat Condition="$(PackageJsonScriptsFormat) == ''">vsh lint --format</PackageJsonScriptsFormat>
+    <PackageJsonScriptsLint Condition="$(PackageJsonScriptsLint) == ''">vsh lint</PackageJsonScriptsLint>
+    <PackageJsonScriptsPostinstall Condition="$(PackageJsonScriptsPostinstall) == ''">pnpm -r run stub --if-present</PackageJsonScriptsPostinstall>
+    <PackageJsonScriptsPreinstall Condition="$(PackageJsonScriptsPreinstall) == ''">npx only-allow pnpm</PackageJsonScriptsPreinstall>
+    <PackageJsonScriptsPreview Condition="$(PackageJsonScriptsPreview) == ''">turbo-run preview</PackageJsonScriptsPreview>
+    <PackageJsonScriptsPublint Condition="$(PackageJsonScriptsPublint) == ''">vsh publint</PackageJsonScriptsPublint>
+    <PackageJsonScriptsReinstall Condition="$(PackageJsonScriptsReinstall) == ''">pnpm clean --del-lock &amp;&amp; pnpm install</PackageJsonScriptsReinstall>
+    <PackageJsonScriptsTestUnit Condition="$(PackageJsonScriptsTestUnit) == ''">vitest run --dom</PackageJsonScriptsTestUnit>
+    <PackageJsonScriptsTestE2e Condition="$(PackageJsonScriptsTestE2e) == ''">turbo run test:e2e</PackageJsonScriptsTestE2e>
+    <PackageJsonScriptsUpdateDeps Condition="$(PackageJsonScriptsUpdateDeps) == ''">npx taze -r -w</PackageJsonScriptsUpdateDeps>
+    <PackageJsonScriptsVersion Condition="$(PackageJsonScriptsVersion) == ''">pnpm exec changeset version &amp;&amp; pnpm install --no-frozen-lockfile</PackageJsonScriptsVersion>
+    <PackageJsonScriptsCatalog Condition="$(PackageJsonScriptsCatalog) == ''">pnpx codemod pnpm/catalog</PackageJsonScriptsCatalog>
+    <PackageJsonDevdependenciesChangesetsChangelogGithub Condition="$(PackageJsonDevdependenciesChangesetsChangelogGithub) == ''">catalog:</PackageJsonDevdependenciesChangesetsChangelogGithub>
+    <PackageJsonDevdependenciesChangesetsCli Condition="$(PackageJsonDevdependenciesChangesetsCli) == ''">catalog:</PackageJsonDevdependenciesChangesetsCli>
+    <PackageJsonDevdependenciesPlaywrightTest Condition="$(PackageJsonDevdependenciesPlaywrightTest) == ''">catalog:</PackageJsonDevdependenciesPlaywrightTest>
+    <PackageJsonDevdependenciesTypesNode Condition="$(PackageJsonDevdependenciesTypesNode) == ''">catalog:</PackageJsonDevdependenciesTypesNode>
+    <PackageJsonDevdependenciesVbenCommitlintConfig Condition="$(PackageJsonDevdependenciesVbenCommitlintConfig) == ''">workspace:*</PackageJsonDevdependenciesVbenCommitlintConfig>
+    <PackageJsonDevdependenciesVbenEslintConfig Condition="$(PackageJsonDevdependenciesVbenEslintConfig) == ''">workspace:*</PackageJsonDevdependenciesVbenEslintConfig>
+    <PackageJsonDevdependenciesVbenPrettierConfig Condition="$(PackageJsonDevdependenciesVbenPrettierConfig) == ''">workspace:*</PackageJsonDevdependenciesVbenPrettierConfig>
+    <PackageJsonDevdependenciesVbenStylelintConfig Condition="$(PackageJsonDevdependenciesVbenStylelintConfig) == ''">workspace:*</PackageJsonDevdependenciesVbenStylelintConfig>
+    <PackageJsonDevdependenciesVbenTailwindConfig Condition="$(PackageJsonDevdependenciesVbenTailwindConfig) == ''">workspace:*</PackageJsonDevdependenciesVbenTailwindConfig>
+    <PackageJsonDevdependenciesVbenTsconfig Condition="$(PackageJsonDevdependenciesVbenTsconfig) == ''">workspace:*</PackageJsonDevdependenciesVbenTsconfig>
+    <PackageJsonDevdependenciesVbenTurboRun Condition="$(PackageJsonDevdependenciesVbenTurboRun) == ''">workspace:*</PackageJsonDevdependenciesVbenTurboRun>
+    <PackageJsonDevdependenciesVbenViteConfig Condition="$(PackageJsonDevdependenciesVbenViteConfig) == ''">workspace:*</PackageJsonDevdependenciesVbenViteConfig>
+    <PackageJsonDevdependenciesVbenVsh Condition="$(PackageJsonDevdependenciesVbenVsh) == ''">workspace:*</PackageJsonDevdependenciesVbenVsh>
+    <PackageJsonDevdependenciesVitejsPluginVue Condition="$(PackageJsonDevdependenciesVitejsPluginVue) == ''">catalog:</PackageJsonDevdependenciesVitejsPluginVue>
+    <PackageJsonDevdependenciesVitejsPluginVueJsx Condition="$(PackageJsonDevdependenciesVitejsPluginVueJsx) == ''">catalog:</PackageJsonDevdependenciesVitejsPluginVueJsx>
+    <PackageJsonDevdependenciesVueTestUtils Condition="$(PackageJsonDevdependenciesVueTestUtils) == ''">catalog:</PackageJsonDevdependenciesVueTestUtils>
+    <PackageJsonDevdependenciesAutoprefixer Condition="$(PackageJsonDevdependenciesAutoprefixer) == ''">catalog:</PackageJsonDevdependenciesAutoprefixer>
+    <PackageJsonDevdependenciesCrossEnv Condition="$(PackageJsonDevdependenciesCrossEnv) == ''">catalog:</PackageJsonDevdependenciesCrossEnv>
+    <PackageJsonDevdependenciesCspell Condition="$(PackageJsonDevdependenciesCspell) == ''">catalog:</PackageJsonDevdependenciesCspell>
+    <PackageJsonDevdependenciesHappyDom Condition="$(PackageJsonDevdependenciesHappyDom) == ''">catalog:</PackageJsonDevdependenciesHappyDom>
+    <PackageJsonDevdependenciesIsCi Condition="$(PackageJsonDevdependenciesIsCi) == ''">catalog:</PackageJsonDevdependenciesIsCi>
+    <PackageJsonDevdependenciesLefthook Condition="$(PackageJsonDevdependenciesLefthook) == ''">catalog:</PackageJsonDevdependenciesLefthook>
+    <PackageJsonDevdependenciesPlaywright Condition="$(PackageJsonDevdependenciesPlaywright) == ''">catalog:</PackageJsonDevdependenciesPlaywright>
+    <PackageJsonDevdependenciesRimraf Condition="$(PackageJsonDevdependenciesRimraf) == ''">catalog:</PackageJsonDevdependenciesRimraf>
+    <PackageJsonDevdependenciesTailwindcss Condition="$(PackageJsonDevdependenciesTailwindcss) == ''">catalog:</PackageJsonDevdependenciesTailwindcss>
+    <PackageJsonDevdependenciesTurbo Condition="$(PackageJsonDevdependenciesTurbo) == ''">catalog:</PackageJsonDevdependenciesTurbo>
+    <PackageJsonDevdependenciesTypescript Condition="$(PackageJsonDevdependenciesTypescript) == ''">catalog:</PackageJsonDevdependenciesTypescript>
+    <PackageJsonDevdependenciesUnbuild Condition="$(PackageJsonDevdependenciesUnbuild) == ''">catalog:</PackageJsonDevdependenciesUnbuild>
+    <PackageJsonDevdependenciesVite Condition="$(PackageJsonDevdependenciesVite) == ''">catalog:</PackageJsonDevdependenciesVite>
+    <PackageJsonDevdependenciesVitest Condition="$(PackageJsonDevdependenciesVitest) == ''">catalog:</PackageJsonDevdependenciesVitest>
+    <PackageJsonDevdependenciesVue Condition="$(PackageJsonDevdependenciesVue) == ''">catalog:</PackageJsonDevdependenciesVue>
+    <PackageJsonDevdependenciesVueTsc Condition="$(PackageJsonDevdependenciesVueTsc) == ''">catalog:</PackageJsonDevdependenciesVueTsc>
+    <PackageJsonEnginesNode Condition="$(PackageJsonEnginesNode) == ''">&gt;=20.10.0</PackageJsonEnginesNode>
+    <PackageJsonEnginesPnpm Condition="$(PackageJsonEnginesPnpm) == ''">&gt;=9.12.0</PackageJsonEnginesPnpm>
+    <PackageJsonPackagemanager Condition="$(PackageJsonPackagemanager) == ''">pnpm@10.12.4</PackageJsonPackagemanager>
+    <PackageJsonPnpmPeerdependencyrulesAllowedversionsEslint Condition="$(PackageJsonPnpmPeerdependencyrulesAllowedversionsEslint) == ''">*</PackageJsonPnpmPeerdependencyrulesAllowedversionsEslint>
+    <PackageJsonPnpmOverridesAstGrepNapi Condition="$(PackageJsonPnpmOverridesAstGrepNapi) == ''">catalog:</PackageJsonPnpmOverridesAstGrepNapi>
+    <PackageJsonPnpmOverridesCtrlTinycolor Condition="$(PackageJsonPnpmOverridesCtrlTinycolor) == ''">catalog:</PackageJsonPnpmOverridesCtrlTinycolor>
+    <PackageJsonPnpmOverridesClsx Condition="$(PackageJsonPnpmOverridesClsx) == ''">catalog:</PackageJsonPnpmOverridesClsx>
+    <PackageJsonPnpmOverridesEsbuild Condition="$(PackageJsonPnpmOverridesEsbuild) == ''">0.25.3</PackageJsonPnpmOverridesEsbuild>
+    <PackageJsonPnpmOverridesPinia Condition="$(PackageJsonPnpmOverridesPinia) == ''">catalog:</PackageJsonPnpmOverridesPinia>
+    <PackageJsonPnpmOverridesVue Condition="$(PackageJsonPnpmOverridesVue) == ''">catalog:</PackageJsonPnpmOverridesVue>
+    <PackageJsonPnpmNeverbuiltdependencies Condition="$(PackageJsonPnpmNeverbuiltdependencies) == ''">[
+  "canvas",
+  "node-gyp"
+]</PackageJsonPnpmNeverbuiltdependencies>
+  </PropertyGroup>
+</Project>
